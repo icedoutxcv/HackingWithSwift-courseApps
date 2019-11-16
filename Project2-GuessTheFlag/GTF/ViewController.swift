@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class ViewController: UIViewController {
     
@@ -29,11 +30,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerLocal()
+        scheduleLocal()
         
         updateScoreInBar()
         
-        
-        
+
         // Do any additional setup after loading the view, typically from a nib.
         countries += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
         for button in buttons {
@@ -122,9 +124,40 @@ class ViewController: UIViewController {
         }
         return normalMessage
     }
+}
+
+// MARK: - Notifications
+extension ViewController: UNUserNotificationCenterDelegate {
+    @objc func registerLocal() {
+        let center = UNUserNotificationCenter.current()
+        
+        center.requestAuthorization(options: [.alert, .badge, .sound]) {
+            granted, error in
+            if granted {
+                print("weee")
+            } else {
+                print("oh..")
+            }
+        }
+    }
     
-    
-    
+    @objc func scheduleLocal() {
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Hi! Please come back and play!"
+        content.body = "Maybe this time?"
+        
+        content.categoryIdentifier = "alarm"
+        content.sound = .default
+        
+        let trigger: UNTimeIntervalNotificationTrigger?
+        trigger = UNTimeIntervalNotificationTrigger(timeInterval: 86400, repeats: true)
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        center.add(request)
+    }
 }
 
 

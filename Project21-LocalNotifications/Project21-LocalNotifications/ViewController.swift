@@ -56,7 +56,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
                 
         switch currentAction {
             case "showLater":
-                trigger =  UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false) // remind me after 24h
+                trigger =  UNTimeIntervalNotificationTrigger(timeInterval: 86400, repeats: false) // remind me after 24h
             default:
                 trigger =  UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         }
