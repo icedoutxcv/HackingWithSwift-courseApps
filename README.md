@@ -37,7 +37,6 @@ My completed apps from Paul Hudson course [Hacking with Swift](https://github.co
 | 28  | ✅ | Touch ID and Face ID, device keychain  |
 | 29  |    |   |
 | 30  |    |   |
-| 31  | ✅ | UIStackView, multitasking for iPad, size classes |
 | 31  | ✅ |  UIStackView, multitasking for iPad, size classes |
 | 32  |   |   |
 | 33  |   |   |
