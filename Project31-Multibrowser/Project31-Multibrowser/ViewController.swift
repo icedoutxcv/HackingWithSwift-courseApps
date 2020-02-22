@@ -17,12 +17,13 @@ class ViewController: UIViewController, WKNavigationDelegate, UITextFieldDelegat
     let https = "https://"
     
     override func viewDidLoad() {
-        
-        setDefaultTitle()
         super.viewDidLoad()
+        setDefaultTitle()
         let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addWebView))
         let delete = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteWebView))
         navigationItem.rightBarButtonItems = [add, delete]
+        
+        addWebView()
     }
     
     func setDefaultTitle() {
@@ -66,6 +67,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UITextFieldDelegat
                 }
             }
         }
+        cleanUI()
         
     }
     
@@ -76,6 +78,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UITextFieldDelegat
         
         activeWebView = webView
         webView.layer.borderWidth = 3
+        updateUI(for: activeWebView ?? WKWebView())
         
     }
     
@@ -112,6 +115,11 @@ class ViewController: UIViewController, WKNavigationDelegate, UITextFieldDelegat
     func updateUI(for webView: WKWebView) {
         title = webView.title
         adressBar.text = activeWebView?.url?.absoluteString ?? ""
+    }
+    
+    func cleanUI() {
+        title = "No active Tab"
+        adressBar.text = "Type adress starting with: https://www..."
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
