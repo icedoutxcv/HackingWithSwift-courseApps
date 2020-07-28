@@ -13,6 +13,7 @@
 		CDCCDC3A24D0814C00F7BAE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDCCDC3824D0814C00F7BAE0 /* Main.storyboard */; };
 		CDCCDC3C24D0814D00F7BAE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDCCDC3B24D0814D00F7BAE0 /* Assets.xcassets */; };
 		CDCCDC3F24D0814D00F7BAE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDCCDC3D24D0814D00F7BAE0 /* LaunchScreen.storyboard */; };
+		CDCCDC4824D0821C00F7BAE0 /* RecordWhistleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCCDC4624D0821C00F7BAE0 /* RecordWhistleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CDCCDC3B24D0814D00F7BAE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDCCDC3E24D0814D00F7BAE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDCCDC4024D0814D00F7BAE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDCCDC4624D0821C00F7BAE0 /* RecordWhistleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWhistleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				CDCCDC3224D0814C00F7BAE0 /* AppDelegate.swift */,
 				CDCCDC3424D0814C00F7BAE0 /* SceneDelegate.swift */,
 				CDCCDC3624D0814C00F7BAE0 /* ViewController.swift */,
+				CDCCDC4624D0821C00F7BAE0 /* RecordWhistleViewController.swift */,
 				CDCCDC3824D0814C00F7BAE0 /* Main.storyboard */,
 				CDCCDC3B24D0814D00F7BAE0 /* Assets.xcassets */,
 				CDCCDC3D24D0814D00F7BAE0 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			files = (
 				CDCCDC3724D0814C00F7BAE0 /* ViewController.swift in Sources */,
 				CDCCDC3324D0814C00F7BAE0 /* AppDelegate.swift in Sources */,
+				CDCCDC4824D0821C00F7BAE0 /* RecordWhistleViewController.swift in Sources */,
 				CDCCDC3524D0814C00F7BAE0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +293,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NU3T85F468;
 				INFOPLIST_FILE = "Project33-WhatsThatWhistle/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,6 +313,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NU3T85F468;
 				INFOPLIST_FILE = "Project33-WhatsThatWhistle/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
