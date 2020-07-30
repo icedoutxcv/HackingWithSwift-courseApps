@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD6D4BD724D33BE300F8DD40 /* SelectGenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6D4BD624D33BE300F8DD40 /* SelectGenreViewController.swift */; };
+		CD6D4BD924D33D4D00F8DD40 /* AddCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6D4BD824D33D4D00F8DD40 /* AddCommentsViewController.swift */; };
+		CD6D4BDB24D33E7700F8DD40 /* SubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6D4BDA24D33E7700F8DD40 /* SubmitViewController.swift */; };
 		CDCCDC3324D0814C00F7BAE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCCDC3224D0814C00F7BAE0 /* AppDelegate.swift */; };
 		CDCCDC3524D0814C00F7BAE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCCDC3424D0814C00F7BAE0 /* SceneDelegate.swift */; };
 		CDCCDC3724D0814C00F7BAE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCCDC3624D0814C00F7BAE0 /* ViewController.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD6D4BD624D33BE300F8DD40 /* SelectGenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenreViewController.swift; sourceTree = "<group>"; };
+		CD6D4BD824D33D4D00F8DD40 /* AddCommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentsViewController.swift; sourceTree = "<group>"; };
+		CD6D4BDA24D33E7700F8DD40 /* SubmitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitViewController.swift; sourceTree = "<group>"; };
 		CDCCDC2F24D0814C00F7BAE0 /* Project33-WhatsThatWhistle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project33-WhatsThatWhistle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDCCDC3224D0814C00F7BAE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDCCDC3424D0814C00F7BAE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +68,9 @@
 				CDCCDC3424D0814C00F7BAE0 /* SceneDelegate.swift */,
 				CDCCDC3624D0814C00F7BAE0 /* ViewController.swift */,
 				CDCCDC4624D0821C00F7BAE0 /* RecordWhistleViewController.swift */,
+				CD6D4BD624D33BE300F8DD40 /* SelectGenreViewController.swift */,
+				CD6D4BD824D33D4D00F8DD40 /* AddCommentsViewController.swift */,
+				CD6D4BDA24D33E7700F8DD40 /* SubmitViewController.swift */,
 				CDCCDC3824D0814C00F7BAE0 /* Main.storyboard */,
 				CDCCDC3B24D0814D00F7BAE0 /* Assets.xcassets */,
 				CDCCDC3D24D0814D00F7BAE0 /* LaunchScreen.storyboard */,
@@ -140,9 +149,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD6D4BDB24D33E7700F8DD40 /* SubmitViewController.swift in Sources */,
 				CDCCDC3724D0814C00F7BAE0 /* ViewController.swift in Sources */,
 				CDCCDC3324D0814C00F7BAE0 /* AppDelegate.swift in Sources */,
+				CD6D4BD724D33BE300F8DD40 /* SelectGenreViewController.swift in Sources */,
 				CDCCDC4824D0821C00F7BAE0 /* RecordWhistleViewController.swift in Sources */,
+				CD6D4BD924D33D4D00F8DD40 /* AddCommentsViewController.swift in Sources */,
 				CDCCDC3524D0814C00F7BAE0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
