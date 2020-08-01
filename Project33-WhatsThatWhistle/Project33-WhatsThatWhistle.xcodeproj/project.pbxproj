@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD3312ED24D5DFF000BE089E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD3312EC24D5DFF000BE089E /* CloudKit.framework */; };
+		CD3908DD24D5E48900EB7620 /* Whistle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3908DC24D5E48900EB7620 /* Whistle.swift */; };
 		CD6D4BD724D33BE300F8DD40 /* SelectGenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6D4BD624D33BE300F8DD40 /* SelectGenreViewController.swift */; };
 		CD6D4BD924D33D4D00F8DD40 /* AddCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6D4BD824D33D4D00F8DD40 /* AddCommentsViewController.swift */; };
 		CD6D4BDB24D33E7700F8DD40 /* SubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6D4BDA24D33E7700F8DD40 /* SubmitViewController.swift */; };
@@ -20,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD3312EA24D5DFEE00BE089E /* Project33-WhatsThatWhistle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Project33-WhatsThatWhistle.entitlements"; sourceTree = "<group>"; };
+		CD3312EC24D5DFF000BE089E /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		CD3908DC24D5E48900EB7620 /* Whistle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Whistle.swift; sourceTree = "<group>"; };
 		CD6D4BD624D33BE300F8DD40 /* SelectGenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenreViewController.swift; sourceTree = "<group>"; };
 		CD6D4BD824D33D4D00F8DD40 /* AddCommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentsViewController.swift; sourceTree = "<group>"; };
 		CD6D4BDA24D33E7700F8DD40 /* SubmitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitViewController.swift; sourceTree = "<group>"; };
@@ -39,17 +44,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3312ED24D5DFF000BE089E /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD3312EB24D5DFF000BE089E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD3312EC24D5DFF000BE089E /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CDCCDC2624D0814C00F7BAE0 = {
 			isa = PBXGroup;
 			children = (
 				CDCCDC3124D0814C00F7BAE0 /* Project33-WhatsThatWhistle */,
 				CDCCDC3024D0814C00F7BAE0 /* Products */,
+				CD3312EB24D5DFF000BE089E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,9 +79,11 @@
 		CDCCDC3124D0814C00F7BAE0 /* Project33-WhatsThatWhistle */ = {
 			isa = PBXGroup;
 			children = (
+				CD3312EA24D5DFEE00BE089E /* Project33-WhatsThatWhistle.entitlements */,
 				CDCCDC3224D0814C00F7BAE0 /* AppDelegate.swift */,
 				CDCCDC3424D0814C00F7BAE0 /* SceneDelegate.swift */,
 				CDCCDC3624D0814C00F7BAE0 /* ViewController.swift */,
+				CD3908DC24D5E48900EB7620 /* Whistle.swift */,
 				CDCCDC4624D0821C00F7BAE0 /* RecordWhistleViewController.swift */,
 				CD6D4BD624D33BE300F8DD40 /* SelectGenreViewController.swift */,
 				CD6D4BD824D33D4D00F8DD40 /* AddCommentsViewController.swift */,
@@ -149,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3908DD24D5E48900EB7620 /* Whistle.swift in Sources */,
 				CD6D4BDB24D33E7700F8DD40 /* SubmitViewController.swift in Sources */,
 				CDCCDC3724D0814C00F7BAE0 /* ViewController.swift in Sources */,
 				CDCCDC3324D0814C00F7BAE0 /* AppDelegate.swift in Sources */,
@@ -302,6 +320,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Project33-WhatsThatWhistle/Project33-WhatsThatWhistle.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NU3T85F468;
 				INFOPLIST_FILE = "Project33-WhatsThatWhistle/Info.plist";
@@ -310,8 +330,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.icedoutxcv.Project33-WhatsThatWhistle";
+				PRODUCT_BUNDLE_IDENTIFIER = com.icedoutxcv.WhatsThatWhistle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -322,6 +343,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Project33-WhatsThatWhistle/Project33-WhatsThatWhistle.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NU3T85F468;
 				INFOPLIST_FILE = "Project33-WhatsThatWhistle/Info.plist";
@@ -330,8 +353,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.icedoutxcv.Project33-WhatsThatWhistle";
+				PRODUCT_BUNDLE_IDENTIFIER = com.icedoutxcv.WhatsThatWhistle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
