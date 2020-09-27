@@ -46,7 +46,9 @@ class ViewController: UITableViewController {
     }
     
     @objc func fetchCommits() {
-        if let data = try? String(contentsOf: URL(string: "https://api.github.com/repos/apple/swift/commits?per_page=100")!) {
+        let newestCommitDate = getNewestCommitDate()
+
+        if let data = try? String(contentsOf: URL(string: "https://api.github.com/repos/apple/swift/commits?per_page=100&since=\(newestCommitDate)")!) {
             // give the data to SwiftyJSON to parse
             let jsonCommits = JSON(parseJSON: data)
             
@@ -75,7 +77,25 @@ class ViewController: UITableViewController {
         let formatter = ISO8601DateFormatter()
         commit.date = formatter.date(from: json["commit"]["commiter"]["date"].stringValue) ?? Date()
         
+        var commitAuthor: Author!
         
+        let authorRequest = Author.createFetchRequest()
+        authorRequest.predicate = NSPredicate(format: "name == %@", json["commit"]["committer"]["name"].stringValue)
+        
+        if let authors = try? container.viewContext.fetch(authorRequest) {
+            if authors.count > 0 {
+                commitAuthor = authors[0]
+            }
+        }
+        
+        if commitAuthor == nil {
+            let author = Author(context: container.viewContext)
+            author.name = json["commit"]["committer"]["name"].stringValue
+            author.email = json["commit"]["committer"]["email"].stringValue
+            commitAuthor = author
+        }
+        
+        commit.author = commitAuthor
     }
     
     func loadSavedData() {
@@ -114,12 +134,35 @@ class ViewController: UITableViewController {
         })
         //4
         ac.addAction(UIAlertAction(title: "Show all commits", style: .default) { [unowned self] _ in
-            self.commits = nil
+            self.commitPredicate = nil
             self.loadSavedData()
         })
         
-        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel)
+        ac.addAction(UIAlertAction(title: "Show only Durian commits", style: .default) { [unowned self] _ in
+            self.commitPredicate = NSPredicate(format: "author.name == 'Joe Groff'")
+            self.loadSavedData()
+        })
+        
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         present(ac, animated: true)
+    }
+    
+    
+    func getNewestCommitDate() -> String {
+        let formatter = ISO8601DateFormatter()
+        
+        let newest = Commit.createFetchRequest()
+        let sort = NSSortDescriptor(key: "date", ascending: false)
+        newest.sortDescriptors = [sort]
+        newest.fetchLimit = 1
+        
+        if let commits = try? container.viewContext.fetch(newest) {
+            if commits.count > 0  {
+                return formatter.string(from: commits[0].date.addingTimeInterval(1))
+            }
+        }
+        
+        return formatter.string(from: Date(timeIntervalSince1970: 0))
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -135,9 +178,27 @@ class ViewController: UITableViewController {
         
         let commit = commits[indexPath.row]
         cell.textLabel!.text = commit.message
-        cell.detailTextLabel!.text = commit.date.description
+        cell.detailTextLabel!.text = "By \(commit.author.name) on \(commit.date.description)"
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = storyboard?.instantiateViewController(identifier: "Detail") as? DetailViewController {
+            vc.detailItem = commits[indexPath.row]
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let commit = commits[indexPath.row]
+            container.viewContext.delete(commit)
+            commits.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            saveContext()
+        }
     }
     
         
