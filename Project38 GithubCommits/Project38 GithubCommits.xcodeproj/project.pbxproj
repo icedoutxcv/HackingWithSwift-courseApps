@@ -18,6 +18,8 @@
 		CDB6A2D3251F660C00C4009D /* Project38.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = CD5AD87C251F5E30009CDCB6 /* Project38.xcdatamodeld */; };
 		CDB6A2D7251F67AB00C4009D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB6A2D6251F67AB00C4009D /* SwiftyJSON.swift */; };
 		CDB6A2DB251F6F4200C4009D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5AD863251F5BC7009CDCB6 /* AppDelegate.swift */; };
+		CDD4DF422521197300889001 /* Author+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD4DF402521197300889001 /* Author+CoreDataClass.swift */; };
+		CDD4DF432521197300889001 /* Author+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD4DF412521197300889001 /* Author+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		CD5AD880251F638C009CDCB6 /* Commit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Commit+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		CD5AD881251F638C009CDCB6 /* Commit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Commit+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		CDB6A2D6251F67AB00C4009D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		CDD4DF402521197300889001 /* Author+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Author+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		CDD4DF412521197300889001 /* Author+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Author+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 		CD5AD862251F5BC7009CDCB6 /* Project38 GithubCommits */ = {
 			isa = PBXGroup;
 			children = (
+				CDD4DF402521197300889001 /* Author+CoreDataClass.swift */,
+				CDD4DF412521197300889001 /* Author+CoreDataProperties.swift */,
 				CD5AD863251F5BC7009CDCB6 /* AppDelegate.swift */,
 				CD5AD865251F5BC7009CDCB6 /* SceneDelegate.swift */,
 				CD5AD867251F5BC7009CDCB6 /* ViewController.swift */,
@@ -155,8 +161,10 @@
 			files = (
 				CDB6A2DB251F6F4200C4009D /* AppDelegate.swift in Sources */,
 				CD5AD882251F638C009CDCB6 /* Commit+CoreDataClass.swift in Sources */,
+				CDD4DF432521197300889001 /* Author+CoreDataProperties.swift in Sources */,
 				CD5AD868251F5BC7009CDCB6 /* ViewController.swift in Sources */,
 				CD5AD883251F638C009CDCB6 /* Commit+CoreDataProperties.swift in Sources */,
+				CDD4DF422521197300889001 /* Author+CoreDataClass.swift in Sources */,
 				CDB6A2D7251F67AB00C4009D /* SwiftyJSON.swift in Sources */,
 				CD5AD866251F5BC7009CDCB6 /* SceneDelegate.swift in Sources */,
 				CD5AD879251F5D3D009CDCB6 /* DetailViewController.swift in Sources */,
