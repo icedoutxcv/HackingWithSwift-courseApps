@@ -6,18 +6,32 @@
 //
 
 import UIKit
+import WebKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var detailLabel: UILabel!
+//    @IBOutlet weak var detailLabel: UILabel!
     var detailItem: Commit?
+
+    @IBOutlet weak var webView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let detail = self.detailItem {
-            detailLabel.text = detail.message
-        }
+//        if let detail = self.detailItem {
+//            detailLabel.text = detail.message
+//        }
+        loadPage()
+        
+        
+    }
+    
+    
+    func loadPage() {
+        let link = URL(string: detailItem!.url)
+        let request = URLRequest(url: link!)
+        webView.load(request)
+        print("end")
     }
     
 

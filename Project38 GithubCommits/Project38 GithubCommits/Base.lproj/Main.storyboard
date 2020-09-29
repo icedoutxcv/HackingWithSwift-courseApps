@@ -61,24 +61,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdW-VI-uU5">
-                                <rect key="frame" x="20" y="64" width="374" height="778"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bnw-Ur-CAK">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eHp-5B-dAF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pdW-VI-uU5" firstAttribute="leading" secondItem="eHp-5B-dAF" secondAttribute="leading" constant="20" id="B6P-6f-s8C"/>
-                            <constraint firstItem="eHp-5B-dAF" firstAttribute="trailing" secondItem="pdW-VI-uU5" secondAttribute="trailing" constant="20" id="W9s-5K-KvG"/>
-                            <constraint firstItem="eHp-5B-dAF" firstAttribute="bottom" secondItem="pdW-VI-uU5" secondAttribute="bottom" constant="20" id="d6m-9U-xMw"/>
-                            <constraint firstItem="pdW-VI-uU5" firstAttribute="top" secondItem="eHp-5B-dAF" secondAttribute="top" constant="20" id="xCX-na-ri9"/>
+                            <constraint firstItem="Bnw-Ur-CAK" firstAttribute="leading" secondItem="eHp-5B-dAF" secondAttribute="leading" id="Y7e-hT-cjq"/>
+                            <constraint firstItem="eHp-5B-dAF" firstAttribute="trailing" secondItem="Bnw-Ur-CAK" secondAttribute="trailing" id="cn7-8r-kCp"/>
+                            <constraint firstItem="Bnw-Ur-CAK" firstAttribute="top" secondItem="eHp-5B-dAF" secondAttribute="top" id="fw4-xh-ygw"/>
+                            <constraint firstItem="eHp-5B-dAF" firstAttribute="bottom" secondItem="Bnw-Ur-CAK" secondAttribute="bottom" id="m43-nI-Sna"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="detailLabel" destination="pdW-VI-uU5" id="DhI-pS-Xua"/>
+                        <outlet property="webView" destination="Bnw-Ur-CAK" id="XDE-7v-qex"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="for-53-M3d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
